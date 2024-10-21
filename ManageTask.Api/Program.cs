@@ -12,8 +12,8 @@ builder.Services.AddDbContext<ManageTask.Infrastructure.Data.TaskManagementDbCon
     options.UseSqlServer(builder.Configuration.GetConnectionString("ManageTaskDbContext"));
 });
 
-builder.Services.AddScoped<ManageTask.Application.Interfaces.ITaskRepository, ManageTask.Infrastructure.Repositories.TaskRepository>();
-builder.Services.AddScoped<ManageTask.Application.Interfaces.ITaskManager, ManageTask.Application.Services.TaskManager>();
+builder.Services.AddTransient<ManageTask.Application.Interfaces.ITaskRepository, ManageTask.Infrastructure.Repositories.TaskRepository>();
+builder.Services.AddTransient<ManageTask.Application.Interfaces.ITaskManager, ManageTask.Application.Services.TaskManager>();
 
 /// <summary>
 /// Adds the API explorer and Swagger generation services.
